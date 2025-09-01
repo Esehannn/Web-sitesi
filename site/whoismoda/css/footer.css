@@ -1,0 +1,167 @@
+/* ======================= FOOTER ANA BLOK - MODERN VE SİMETRİK TASARIM ======================= */
+
+/* Footer ana alanı: Arka planı yumuşak mavi degrade, üst köşeleri yuvarlatılmış, sitenin en altında büyük ve modern görsel alan */
+#bottomFooter {
+    background: linear-gradient(90deg, #21528b 0%, #cbe5fc 100%);
+    color: #193257;
+    text-align: center;
+    padding: 50px 0 28px 0;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 -4px 32px rgba(31, 67, 104, 0.09);
+    overflow: hidden;
+}
+
+/* CONTAINER: ÜÇ KUTUYU YAN YANA ORTALAR VE SİMETRİ SAĞLAR */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;              /* Kutular arası boşluk */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FOOTER KUTULARI: Her kutu aynı boyutta, beyaz arka plan ve hafif şeffaf, modern gölgeli */
+.footerItem {
+    background: rgba(255,255,255,0.82);
+    padding: 38px 28px 28px 28px;
+    border-radius: 16px;
+    width: 310px;            /* Tüm kutular sabit genişlikte */
+    min-height: 250px;
+    margin-bottom: 0;
+    box-shadow: 0 2px 18px rgba(31, 82, 130, 0.11);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.28s, transform 0.28s, background 0.28s;
+    position: relative;
+}
+/* KUTU HOVER: Hover'da kutu hafifçe büyür, yukarı sıçrar, mavi gölge belirir */
+
+
+/* BAŞLIKLAR: Kutu içindeki başlıklar, kalın ve mavi tonlu gölgeli, modern tipografi */
+.footerItem h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #1766b3;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 0 3px 16px #a3dbfa, 0 0 4px #fff;
+    transition: color 0.22s, text-shadow 0.22s;
+}
+/* Hover ile başlık rengi koyulaşır, gölge güçlenir */
+.footerItem:hover h3 {
+    color: #21528b;
+    text-shadow: 0 4px 18px #63bcfa, 0 0 8px #fff;
+}
+
+/* ALTBAŞLIK LİNK: Kutunun içindeki ana link (ör: site adı), canlı mavi, hover'da koyulaşır ve glow efekti gelir */
+.altbasliklink {
+    color: #2292e6;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+.footerItem:hover .altbasliklink {
+    color: #125094;
+    text-shadow: 0 2px 8px #60d1ff;
+}
+
+/* Açıklama Yazısı: Kutunun içindeki küçük metinler için */
+.footerItem p {
+    color: #46617e;
+    font-size: 15px;
+    margin-top: 10px;
+    text-shadow: none;
+}
+
+/* HIZLI LİNKLER BLOĞU: Menü şeklinde alt alta footer linkleri */
+.footerLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footerLinks li {
+    margin-bottom: 11px;
+}
+.footerLinks a {
+    color: #1e4979;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 7px 16px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+/* Hızlı linkler üzerinde hover: Arka plan açılır, renk değişir, gölge efekti belirir */
+.footerLinks a:hover {
+    background: #e3f2fc;
+    color: #1686b5;
+    box-shadow: 0 0 14px #d3f2fd;
+}
+
+/* SOSYAL MEDYA İKONLARI BLOĞU: Dairesel ikonlar, hafif gölgeli ve animasyonlu */
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 10px;
+}
+.socialLinks li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* Sosyal medya ikonları: Daire içinde, hafif mavi tonlu arka plan */
+.socialLinks a {
+    color: #1766b3;
+    font-size: 25px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f6fc;
+    border: none;
+    box-shadow: 0 1px 10px #a3dbfa50;
+    transition: background 0.22s, color 0.22s, box-shadow 0.22s, transform 0.18s;
+}
+/* Sosyal ikon hover: Arka plan canlı mavi geçişli, ikon beyaz, daha büyük ve parlak olur */
+.socialLinks a:hover {
+    color: #fff;
+    background: linear-gradient(135deg,#2292e6 55%, #63bcfa 100%);
+    box-shadow: 0 2px 20px #2292e6a6, 0 1px 18px #bde5fd96;
+    transform: scale(1.17) rotate(-7deg);
+    outline: 2.5px solid #1e497995;
+}
+
+/* RESPONSIVE FOOTER - 900px ALTINDA KUTULAR ALTA GEÇER */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+    .footerItem {
+        width: 95%;
+        min-width: unset;
+        margin: 0 8px 22px 8px;
+    }
+}
+
+/* KÜÇÜK YAZILAR (TELİF vb. için) */
+#bottomFooter small {
+    display: block;
+    margin-top: 24px;
+    font-size: 12px;
+    color: #254d6d;
+    opacity: 0.58;
+    letter-spacing: 1px;
+}

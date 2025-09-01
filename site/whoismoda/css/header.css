@@ -1,0 +1,177 @@
+/* ====================== HEADER ====================== */
+header {
+    /* Mavi tonlu degrade */
+    background: linear-gradient(90deg, #21528b 0%, #cbe5fc 100%);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(31, 67, 104, 0.17); /* Daha yumuşak, modern gölge */
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER ÇİZGİSİ */
+.header-divider {
+    width: 100%;
+    height: 12px; 
+    background: linear-gradient(
+        90deg,
+        #63bcfa 0%,    
+        #2292e6 50%,   
+        #43cea2 100%  
+    );
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #2292e678;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 0;
+    transition: all 0.3s ease-in-out;
+}
+.header-divider:hover {
+    box-shadow: 0 0 22px #2292e6a1;
+    transform: scaleX(1.04);
+}
+
+/* ANA DÜZENLEYİCİ: Menü, logo ve üyelik butonları için esnek kutu */
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* LOGO alanı, logo boyutu ve hizalaması */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 160px;    /* Daha makul logo yüksekliği */
+    width: auto;
+    display: block;
+    margin-right: 60px;
+    margin-top: -38px;
+    position: relative;
+    top: -10px;
+    left: 0;
+}
+
+/* ÜYELİK BUTONLARI: Kayıt Ol, Giriş, Profil vs. */
+.uyelik-butonlari {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* ÜYELİK BUTONLARI: Modern mavi-beyaz uyumlu tasarım, border ile yumuşak */
+.uyelik-butonlari a {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #21528b;
+    background: #e8f6fc;
+    border: 2px solid #63bcfa;
+    box-shadow: none;
+    transition: all 0.25s ease;
+}
+.uyelik-butonlari a:hover {
+    background: linear-gradient(135deg,#2292e6 70%, #63bcfa 100%);
+    color: #fff;
+    border-color: #2292e6;
+    box-shadow: 0 2px 18px #bde5fd77;
+    transform: translateY(-2px) scale(1.06);
+}
+
+/* Kayıt Ol Butonu: Footer'ın "Canlı mavi"si ile uyumlu renk geçişli */
+.kayit-btn {
+    background: linear-gradient(135deg, #2292e6 60%, #63bcfa 100%);
+    color: #fff;
+    border: 2px solid #2292e6;
+}
+.kayit-btn:hover {
+    background: #21528b;
+    color: #fff;
+    box-shadow: 0 8px 22px #63bcfa91;
+    border-color: #125094;
+}
+
+/* Giriş Yap Butonu: Temel mavi-beyaz, hover'da daha koyu mavi */
+.giris-btn {
+    background: #e8f6fc;
+    color: #21528b;
+    border: 2px solid #63bcfa;
+}
+.giris-btn:hover {
+    background: #2292e6;
+    color: #fff;
+    border-color: #21528b;
+    box-shadow: 0 8px 22px #2292e651;
+    transform: translateY(-2px) scale(1.06);
+}
+
+/* Profil kutusu (ad soyad yazan): Ufak kutu, font uyumlu */
+.hosgeldin-kutu-header h2,
+.hosgeldin-kutu-header span {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #21528b;
+    background: #e8f6fc;
+    padding: 8px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #63bcfa3a;
+}
+
+/* MENÜ ANA BÖLÜM: Responsive, flexbox ile hizalı */
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Menü içindeki ana liste */
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Menü itemleri: Dikeyde bol padding ile menü yüksek gösterim */
+.menu li {
+    float: left;
+    padding: 38px 2px;
+    font-size: large;
+    animation: fadeIn 1s ease-in-out;
+}
+.menu li a {
+    padding: 22px 17px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #21528b;
+    font-weight: 600;
+    background: transparent;
+    border-radius: 16px;
+    transition: all .25s ease;
+}
+/* Menü hover: Arka plan açık mavi, yazı beyaz, gölge belirir */
+.menu li a:hover {
+    background-color: #63bcfa;
+    color: #fff;
+    border-color: #63bcfa;
+    box-shadow: 0 4px 18px #63bcfa44;
+    transform: translateY(-2px) scale(1.09);
+    border-radius: 25px;
+}
+
+

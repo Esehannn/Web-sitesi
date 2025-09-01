@@ -1,0 +1,106 @@
+/* ==================== E-TİCARET NEDİR BÖLÜMÜ ==================== */
+
+/* Ana bölüm: e-ticaret nedir kısmının genel arka planı ve boşluğu ayarlanır */
+#eticaretNedir {
+    height: auto;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Slider alanı dikey olarak kutuları alt alta dizer */
+.eticaretSlider {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Her bir bilgi kutusunun genel görünümü */
+.eticaretItem {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out forwards; /* İlk açılışta animasyon için */
+    opacity: 0; /* Animasyon başlangıcında görünmesin */
+    border-radius: 100px; /* Köşeleri tam oval yapar */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Kutuya derinlik efekti */
+    transition: transform 0.5s ease-in-out; /* Hover büyümesi için */
+}
+
+/* Bilgi kutusunun içindeki resim için: kırpma ve orantılı sığdırma */
+.eticaretItem img {
+    width: 100%;
+    height: auto;
+    max-width: 2000px;
+    max-height: 800px;
+    clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%); /* Üst-alt kırpma */
+    transition: transform 0.5s ease-in-out;
+    object-fit: cover; /* Taşmadan sığdırır */
+}
+
+/* Hover: kutuyu büyüt, gölgesini azalt */
+.eticaretItem:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* Hover: resmi büyüt */
+.eticaretItem:hover img {
+    transform: scale(1.2);
+}
+
+/* Açıklama metni: ortada, başta gizli */
+.eticaretText {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Koyu yarı saydam arka plan */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    opacity: 0; /* Başta görünmez */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Hover olunca metni göster */
+.eticaretItem:hover .eticaretText {
+    opacity: 1;
+}
+
+/* Metinlerin ortak özellikleri */
+.eticaretText h2,
+.eticaretText p {
+    margin: 5px 0;
+}
+
+/* Başlık kısmı öne çıksın diye */
+.eticaretText h2 {
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* Her kutuya ayrı renk arka plan vermek için ID ile ayarlama */
+#item1 {
+    background-color: #101cb9; /* Mavi */
+}
+
+#item2 {
+    background-color: #ffe70d; /* Sarı */
+}
+
+#item3 {
+    background-color: #ac490f; /* Kahverengi-turuncu */
+}
+
+/* Her kutuya şeffaf gri bir overlay efekti (daha koyu gösterir) */
+.eticaretItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.4);
+    z-index: 1;
+}

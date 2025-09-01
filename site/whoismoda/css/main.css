@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.ttf'); /* 'fonts' klasörüne gidiş */
+}
+
+body {
+    background: #fff;
+    color: #3f3f3f;
+    font: 14px / 28px;
+    font-family: 'Oswald', arial;
+}
+
+h1 {
+    font-size: 52px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    color:#248ab9 ;
+    font-weight: bold;
+    transition: all .5s ease;
+}
+
+.container {
+    width: 90% ;
+    margin: 0 auto; 
+    display: flex;
+}
+
+.sectionArea {
+    padding: 80px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

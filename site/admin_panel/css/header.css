@@ -1,0 +1,31 @@
+.navbar {
+    background: #007bff;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    margin: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 8px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.2s;
+    display: inline-block;
+}
+.navbar a:hover, .navbar a.button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+body {
+    padding-top: 60px !important;
+}

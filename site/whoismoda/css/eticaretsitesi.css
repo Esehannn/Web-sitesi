@@ -1,0 +1,420 @@
+
+/* ===================== ANA SAYFA SLIDER BÖLÜMÜ ===================== */
+/* Ana sayfanın üst kısmındaki büyük banner ve slider görseli */
+#mainSlider {
+    height: 500px;
+    background: url('../resimler/ana sayfa ana görsel.jpg') center center no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+}
+
+.slider {
+    width: 100%;
+}
+
+#mainCaption {
+    height: 500px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #248ab9;
+}
+
+/* ===================== SEZON ÜRÜNLERİ BÖLÜMÜ ===================== */
+/* Sezonluk ürünlerin kutu ve başlık tasarımları */
+.SezonBody .container {
+    justify-content: space-between;
+}
+
+/* Sezon ürünleri için 3 sütunlu kutu yapısı */
+.col3 {
+    flex-grow: 1;
+    width: 33.33%;
+    animation: fade-in 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Sezon ürünleri başlığı */
+.SezonTop {
+    text-align: center;
+    animation: fade-in 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Ürün görselini kutu içinde taşır ve hover efekti verir */
+.zoom {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+/* Ürün görselinin kutu içindeki görünümü ve geçiş efekti */
+.zoom img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all .5s ease;
+}
+
+/* Sezon ürünleri kutusu ana yapı */
+.item {
+    padding: 10px 20px;
+}
+
+/* Ürün kutusu içindeki metin alanı */
+.item .itemText {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #248ab9;
+}
+
+/* Hover'da ürün görselini büyüt */
+.item:hover .zoom img {
+    transform: scale(1.25);
+}
+
+/* Hover'da ürün başlığının rengini değiştir */
+.item:hover h3 {
+    color: #fff;
+}
+
+/* Hover'da ürün kutusu arka plan ve metin rengi değişimi */
+.item:hover .itemText {
+    background: #248ab9;
+    color: #fff;
+    transition: all .5s ease;
+}
+
+/* Ürün detayları butonu */
+.detaylar {
+    color: #248ab9;
+    padding: 5px 30px;
+    text-decoration: none;
+    border: 1px solid #248ab9;
+    transition: all .5s ease;
+}
+
+/* Hover'da detaylar butonu rengi değişir */
+.item:hover .detaylar {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* Ürün kutusu açıklama metni */
+.itemText p {
+    margin: 20px 5px;
+}
+
+/* ===================== PARALLAX HOŞGELDİNİZ BÖLÜMÜ ===================== */
+/* Hoşgeldiniz kısmı için arka plan ve yazı hizalama */
+#parallax {
+    background: linear-gradient(
+        rgba(51, 50, 50, 0.7),
+        rgba(43, 42, 42, 0.7)
+    ),
+    url('../resimler/hosgeldiniz.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+/* ===================== PLATFORMLAR BÖLÜMÜ ===================== */
+/* Aktif satış yapılan platformlar için kutu ve başlık tasarımları */
+/* Platformlar başlığı */
+/* Platformlar ana başlığı */
+.platformlarTop {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #185a9d;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(33,138,185,0.10);
+    position: relative;
+}
+/* Platformlar başlığı altındaki vurgu çizgisi */
+.platformlarTop::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #43cea2;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(67,206,162,0.18);
+}
+
+/* Platform kutularını yatayda ve ortada sıralar */
+.platformlarcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+/* Tek bir platform kutusunun görünümü */
+.col2 {
+    flex: 1 1 220px;
+    max-width: 260px;
+    min-width: 200px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(33,138,185,0.10);
+    background: #fff;
+    transition: box-shadow 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Platform kutusuna hover efekti: kutu büyür ve arka planı açılır */
+.col2:hover {
+    box-shadow: 0 8px 32px rgba(33,138,185,0.18);
+    transform: translateY(-8px) scale(1.04);
+    background: linear-gradient(135deg, #e3f6fd 60%, #f7f7fa 100%);
+}
+
+/* Platform kutusundaki görselin görünümü */
+.imageOver {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 2px 8px rgba(33,138,185,0.08);
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+/* Hover'da görsel büyür ve hafif döner */
+.col2:hover .imageOver {
+    transform: scale(1.07) rotate(-1deg);
+}
+
+/* Platform kutusu üzerine gelince çıkan yarı saydam renkli katman */
+.platformlarOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(33,138,185,0.60), rgba(67,206,162,0.60));
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(.4,2,.6,1);
+    border-radius: 16px;
+    z-index: 2;
+}
+/* Hover'da overlay görünür olur */
+.col2:hover .platformlarOverlay {
+    opacity: 1;
+}
+
+/* Platform kutusu üzerinde görünen başlık ve açıklama kutusu */
+.platformlarText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    padding: 18px 12px;
+    background: rgba(33,138,185,0.92);
+    transition: all 0.4s cubic-bezier(.4,2,.6,1);
+    border: 2.5px solid #43cea2;
+    opacity: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(33,138,185,0.18);
+    z-index: 3;
+}
+/* Hover'da başlık ve açıklama kutusu görünür olur */
+.col2:hover .platformlarText {
+    opacity: 1;
+}
+/* Platform kutusu başlığı */
+.platformlarText h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+/* Platform kutusu açıklama metni */
+.platformlarText p {
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+    font-size: 15px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+
+/* ===================== FOOTER BÖLÜMÜ ===================== */
+/* Sayfanın en altındaki genel footer alanı */
+#bottomFooter {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Sezon ürünleri başlığı (footer sonrası tekrar tanımlı) */
+.SezonTop {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #248ab9;
+}
+
+/* Sezon başlığı altındaki vurgu çizgisi */
+.SezonTop::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ff6600;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Sezon ürünleri kutularını yatayda ve aralıklı dizer */
+.SezonBody {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Sezon ürünleri kutularının iç yapısı ve hover efekti */
+.SezonBody .col3 {
+    flex: 1 1 calc(33.33% - 20px); 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+/* Hover'da sezon kutusu gölgesi ve yukarı kayma efekti */
+.SezonBody .col3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Sezon ürünleri kutusu ana yapı (footer sonrası tekrar tanımlı) */
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; 
+}
+
+/* Hover'da sezon kutusu gölgesi ve yukarı kayma efekti (footer sonrası tekrar tanımlı) */
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Sezon ürünleri görseli (footer sonrası tekrar tanımlı) */
+.zoom img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+}
+
+/* Sezon ürünleri kutusu metin alanı (footer sonrası tekrar tanımlı) */
+.itemText {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Sezon ürünleri kutusu başlığı (footer sonrası tekrar tanımlı) */
+.itemText h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Sezon ürünleri kutusu açıklama metni (footer sonrası tekrar tanımlı) */
+.itemText p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Sezon ürünleri detaylar butonu (footer sonrası tekrar tanımlı) */
+.detaylar {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+/* Hover'da sezon detaylar butonu rengi değişir */
+.detaylar:hover {
+    background: linear-gradient(135deg, #185a9d, #43cea2);
+}
+
+/* Platformlar bölümü kutularını yatayda ve aralıklı dizer */
+.platformBody .container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;       
+    justify-content: center; 
+    
+}
+
+/* Platform kutusu ana yapı (footer sonrası tekrar tanımlı) */
+.col2 {
+    flex: 1 1 calc(25% - 20px); 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===================== GENEL BAŞLIKLAR ===================== */
+/* Sezon Ürünleri başlıkları ve diğer h2 başlıkları için stil */
+h2.sectionHeader {
+    font-size: 24px; 
+    font-weight: bold;
+    text-align: center; 
+    background: linear-gradient(135deg, #43cea2, #185a9d); 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    border: 2px solid #248ab9; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    margin: 20px auto; 
+    width: fit-content; 
+    max-width: 80%; 
+    transition: all 0.3s ease; 
+}
+
+/* Hover efekti */
+h2.sectionHeader:hover {
+    background: linear-gradient(135deg, #185a9d, #43cea2); 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); 
+}
+

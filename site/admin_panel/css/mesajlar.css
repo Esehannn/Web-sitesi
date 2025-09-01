@@ -1,0 +1,60 @@
+/* Mesajlar tablosu ve butonları için özel stiller */
+
+h1 {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: #333;
+    font-size: 2rem;
+}
+
+table {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto 40px auto;
+    width: 95%;
+    max-width: 1100px;
+}
+
+th, td {
+    font-size: 1rem;
+}
+
+th {
+    background: #f7f7f7;
+    color: #222;
+    font-weight: 600;
+}
+
+td {
+    color: #444;
+}
+
+.btn {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 4px;
+    transition: background 0.2s;
+}
+
+.btn-duzenle {
+    background: #007bff;
+    color: #fff;
+}
+
+.btn-duzenle:hover {
+    background: #0056b3;
+}
+
+.btn-sil {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-sil:hover {
+    background: #a71d2a;
+}

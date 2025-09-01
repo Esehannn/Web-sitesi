@@ -1,0 +1,164 @@
+/* ==================== HAKKIMIZDA SAYFASI ==================== */
+
+/* Sayfanın ana kapsayıcısı. Tüm hakkımızda bloklarını yatayda ve dikeyde hizalar, responsive için wrap açılır. */
+.hakkimizda {
+    padding: 20px;
+    flex-wrap: wrap;              /* Alt alta dizilmeyi sağlar */
+    justify-content: space-around;/* Elemanlar arasında boşluk bırakır */
+    align-items: center;          /* Dikeyde ortalama */
+    display: flex;                /* Flexbox ile hizalama */
+}
+
+/* Sol ve sağ bloklar: Her biri bir kutu, arka planı beyaz ve köşeleri oval. */
+.hakkimizdasol1,
+.hakkimizdasol2,
+.hakkimizdasag1,
+.hakkimizdasag2 {
+    margin-bottom: 20px;          /* Bloklar arası dikey boşluk */
+    width: 100%;                  /* Tüm satırı kaplar, responsive uyum için */
+    position: relative;           /* İçine absolute ile metin yerleştirmek için */
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;          /* Köşeleri yuvarlatır */
+}
+
+/* Sağdaki resimler: Büyük ve kutuya uygun olacak şekilde boyutlandırılmış, kenarlık ve oval köşe eklenmiş. */
+img.hakkimizdaimgsag1,
+img.hakkimizdaimgsag2 {
+    max-width: 700px;
+    height: 500px;
+    border: 3px solid rgb(179, 61, 6); /* Turuncu kenarlık */
+    margin-left: 62%;                  /* Sağ kutu hizası için sola boşluk */
+    z-index: 1;                        /* Metin kutusundan altta kalır */
+    border-radius: 20px;
+}
+
+/* Soldaki resimler: Sağdakiler gibi ama sola yaslı (margin yok). */
+img.hakkimizdaimgsol1,
+img.hakkimizdaimgsol2 {
+    max-width: 700px;
+    height: 500px;
+    border: 3px solid rgb(179, 61, 6);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+/* Metin kutuları: Resmin üstüne bindirilmiş renkli kutular. Absolute ile yerleşiyor, gölge ve oval köşe ekli. */
+.text-container1,
+.text-container2,
+.text-container3,
+.text-container4 {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(179, 61, 6, 0.9); /* Turuncu şeffaf kutu */
+    position: absolute;                       /* Resmin üstüne bindirmek için */
+    z-index: 2;                              /* Resimden yukarıda olur */
+    padding: 20px;
+    top: 50%;                                /* Yüksekliğin ortasına */
+    transform: translateY(-50%);             /* Tam ortalamak için */
+    text-align: center;
+    right: 50%;                              /* Ortalamak için sola kaydırılır */
+    transform: translateX(50%);              /* Tam ortada olur */
+    border-radius: 30px;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+}
+
+/* Hover: Kutu üzerine gelince arka plan tamamen turuncu olur, vurgulu görünür */
+.text-container1:hover,
+.text-container2:hover,
+.text-container3:hover,
+.text-container4:hover {
+    background-color: rgba(179, 61, 6, 1);   /* Opak turuncu */
+}
+
+/* Resim hover efekti: Üzerine gelince hafif büyür ve saydamlaşır */
+.hakkimizda img {
+    position: relative;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out;        /* Yavaşça görünür */
+}
+
+.hakkimizda img:hover {
+    transform: scale(1.1);                   /* %10 büyütür */
+    opacity: 0.8;                            /* Biraz saydamlaşır */
+}
+
+.hakkimizda img:not(:hover) {
+    opacity: 1;
+}
+
+/* Metin kutularındaki başlıklar: Büyük puntolu ve siyah */
+.text-container1 h2,
+.text-container2 h2,
+.text-container3 h2,
+.text-container4 h2 {
+    font-size: large;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 3px;
+}
+
+/* ==================== HAKKIMIZDA FOOTER ==================== */
+
+/* Sayfanın en altındaki renkli alan */
+#hakkımızdaFooter {
+    background-color: rgb(179, 61, 6); /* Turuncu */
+    color: #fff;                       /* Beyaz yazı */
+    text-align: center;                /* Ortalar */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Footer içindeki sosyal medya linklerini yatayda dizi olarak gösterir */
+#hakkımızdaFooter .socialLinks li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    background-color: rgb(179, 61, 6);
+    color: #fff;
+}
+
+/* Sosyal medya butonlarının stilini ve animasyonunu ayarlar */
+#hakkımızdaFooter .socialLinks a {
+    font-size: 20px;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(179, 61, 6);
+    color: #000000cb;                 /* Hafif siyah yazı */
+    text-align: center;
+    line-height: 70px;
+    text-decoration: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: 2px solid #000000;
+}
+
+/* Hover ile buton rengini koyulaştırır ve hafif büyütür */
+#hakkımızdaFooter .socialLinks a:hover {
+    background-color: #68060673;
+    transform: scale(1.1);
+    border: 2px solid #0a0000;
+}
+
+/* Sosyal medya ikonuna da animasyon ekler */
+#hakkımızdaFooter .socialLinks i {
+    transition: color 0.3s ease-in-out;
+}
+
+#hakkımızdaFooter .socialLinks a:hover i {
+    color: #ffffff;
+}
+
+#hakkımızdaFooter .sosyal3:hover .altbaslik {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ff0000;
+}
